@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizer</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.x39644.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td:last-child {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3fb733;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Частная Клиника "Милосердие"</h1>
+<h3>Список Записей</h3>
+
+<table>
+    <tr>
+        <th>Имя Пациента</th>
+        <th>Фамилия Пациента</th>
+        <th>Дата записи</th>
+        <th>Имя Врача</th>
+        <th>Специальность Врача</th>
+        <th></th>
+    </tr>
+    <div th:each="task : ${taskList}">
+        <tr>
+            <td th:text="${task.firstName}"></td>
+            <td th:text="${task.secondName}"></td>
+            <td th:text="${task.date}"></td>
+            <td th:text="${task.docName}"></td>
+            <td th:text="${task.docSpec}"></td>
+            <td><a th:href="@{/talon/delete/{id}(id=${task.id})}">Отменить запись</a></td>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

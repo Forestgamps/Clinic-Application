@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 10px 0;
+            color: #666;
+        }
+
+        a {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #3fb733;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #38a02e;
+        }
+    </style>
+</head>
+<body>
+<h1>Частная клиника "Милосердие"</h1>
+<h2>Здоровье в каждом вдохе, забота на каждом шаге!</h2>
+<a th:href="@{/talon/talonDentist}">Записаться на приём к зубному</a>
+<p></p>
+<a th:href="@{/talon/talonHirurg}">Записаться на приём к хирургу</a>
+<p></p>
+<a th:href="@{/talon}">Записи</a>
+</body>
+</html>
