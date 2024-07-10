@@ -55,28 +55,29 @@
 </head>
 <body>
 <h1>Частная Клиника "Милосердие"</h1>
-<h3>Список Записей</h3>
+<h3>Список Врачей</h3>
 
 <table>
     <tr>
-        <th>Имя Пациента</th>
-        <th>Фамилия Пациента</th>
-        <th>Дата записи</th>
-        <th>Имя Врача</th>
-        <th>Специальность Врача</th>
+        <th>ФИО Врача</th>
         <th></th>
     </tr>
     <div th:each="task : ${taskList}">
         <tr>
-            <td th:text="${task.firstName}"></td>
-            <td th:text="${task.secondName}"></td>
-            <td th:text="${task.date}"></td>
             <td th:text="${task.docName}"></td>
-            <td th:text="${task.docSpec}"></td>
-            <td><a th:href="@{/talon/delete/{id}(id=${task.id})}">Отменить запись</a></td>
+            <td><a th:href="@{/doctor/delete/{id}(id=${task.id})}">Уволить врача</a></td>
         </tr>
     </div>
 </table>
+
+<h3>Принять врача на работу</h3>
+<form action="/doctor/add" th:object="${doctor}" method="post">
+    <label for="fname">ФИО:</label>
+    <input type="text" id="fname" name="docName"><br><br>
+
+    <br><br>
+    <input type="submit" value="Добавить">
+</form>
 <a th:href="@{/}">Назад</a>
 </body>
 </html>

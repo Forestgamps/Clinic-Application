@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.curs.Clinic.entity.Doctor;
 import ru.curs.Clinic.entity.Talon;
+import ru.curs.Clinic.service.DoctorService;
 import ru.curs.Clinic.service.TalonService;
 
 import java.util.List;
@@ -14,6 +16,10 @@ import java.util.List;
 public class TalonController {
     @Autowired
     TalonService dao;
+
+    @Autowired
+    DoctorService ddao;
+
 
     @RequestMapping
     public String getAll(Model model) {
@@ -27,6 +33,9 @@ public class TalonController {
     public String getAllHirurg(Model model) {
         List<Talon> taskList = dao.getTalons();
         model.addAttribute("taskList", taskList);
+
+        List<Doctor> docList = ddao.getDoctors();
+        model.addAttribute("docList", docList);
         return "talonHirurg";
     }
 
@@ -34,6 +43,9 @@ public class TalonController {
     public String getAllDentist(Model model) {
         List<Talon> taskList = dao.getTalons();
         model.addAttribute("taskList", taskList);
+
+        List<Doctor> docList = ddao.getDoctors();
+        model.addAttribute("docList", docList);
         return "talonDentist";
     }
 

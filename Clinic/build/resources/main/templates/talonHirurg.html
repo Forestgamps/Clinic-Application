@@ -61,14 +61,13 @@
     <label for="d">Дата:</label>
     <input type="datetime-local" id="d" name="date">
 
-    <select name="docName">
-        <option value="Дмитрий Волков">Дмитрий Волков</option>
-        <option value="Станислав Кирилло">Станислав Кириллов</option>
-        <option value="Анна Валерьева">Анна Валерьева</option>
+    <select id="docName" name="docName">
+        <option th:each="doc:${docList}" th:value="${doc.docName}" th:text="${doc.docName}"></option>
     </select>
 
     <br><br>
     <input type="submit" value="Записаться">
 </form>
+<a th:href="@{/}">Назад</a>
 </body>
 </html>

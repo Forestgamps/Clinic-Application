@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.security.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import static java.time.format.DateTimeFormatter.ISO_DATE_TIME;
@@ -27,8 +29,8 @@ public class Talon {
     @Basic
     private String docSpec;
     @Basic
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime date;
 
     public Talon(){}
 
@@ -36,7 +38,7 @@ public class Talon {
         return id;
     }
 
-    public Talon(String firstName, String secondName, Date date){
+    public Talon(String firstName, String secondName, LocalDateTime date){
         this.date = date;
         this.firstName = firstName;
         this.secondName = secondName;

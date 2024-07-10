@@ -24,7 +24,7 @@
 
         a {
             display: block;
-            width: 200px;
+            width: 225px;
             margin: 20px auto;
             padding: 10px;
             text-align: center;
@@ -32,20 +32,33 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            transition: 0.3s;
         }
 
         a:hover {
+            transition: 0.3s;
             background-color: #38a02e;
+            width: 250px;
         }
     </style>
 </head>
 <body>
 <h1>Частная клиника "Милосердие"</h1>
 <h2>Здоровье в каждом вдохе, забота на каждом шаге!</h2>
-<a th:href="@{/talon/talonDentist}">Записаться на приём к зубному</a>
+<a th:href="@{/talon/talonDentist}">Записать на приём к зубному</a>
 <p></p>
-<a th:href="@{/talon/talonHirurg}">Записаться на приём к хирургу</a>
+<a th:href="@{/talon/talonHirurg}">Записать на приём к хирургу</a>
 <p></p>
 <a th:href="@{/talon}">Записи</a>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<a th:href="@{/doctor}">Список Врачей</a>
 </body>
 </html>
